@@ -1,3 +1,5 @@
+
+
 <?php
     session_start();
     if(isset($_SESSION['user']) == ""){
@@ -120,7 +122,7 @@ if(isset($_POST["delete-submit"])) {
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdn.datatables.net/1.13.4/css/jquery.dataTables.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-<!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,80...lay=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,300;0,400;0,500;0,600;0,700;1,800&display=swap" rel="stylesheet"> -->
     <link rel="stylesheet" href="css/table.css">
     <title>Ai Là Triệu Phú</title>
     <link rel="icon" href='/images/logo.png' type='image/jpg' , sizes='16x16'>
@@ -171,7 +173,7 @@ if(isset($_POST["delete-submit"])) {
                                         </tr>
                                     </thead>
                                     <tbody>
-<?php foreach($Questions as $question){ ?>
+                                        <?php foreach($Questions as $question){ ?>
                                         <tr>
                                                 <td><?php echo $question["QuestionID"];?></td>
                                                 <td><?php echo $question["Question"];?></td>
@@ -204,8 +206,8 @@ if(isset($_POST["delete-submit"])) {
                                                     <button 
                                                         class="btn btn-danger" 
                                                         data-toggle="modal" 
-                                                        data-target="#deleteQuestion"
-data-id="<?php echo $question["QuestionID"];?>" 
+                                                        data-target="#deleteQuestion" 
+                                                        data-id="<?php echo $question["QuestionID"];?>" 
                                                         >
                                                         <span class="ti-trash"></span>&nbsp;
                                                         Xóa
@@ -257,7 +259,7 @@ data-id="<?php echo $question["QuestionID"];?>"
                                         </span>
                                     </label>
                                     <div class="custom-desc">
-Đánh dấu đây là câu trả lời đúng
+                                        Đánh dấu đây là câu trả lời đúng
                                     </div>
                                 </div>
                                 <input class="form-control option-custom" type='text'
@@ -302,7 +304,7 @@ data-id="<?php echo $question["QuestionID"];?>"
                                     <input type="radio" class="form-check-input-custom color-4" id="custom4" name='answer'
                                         value='D' required>
                                     <label for="custom4">
-<span>
+                                        <span>
                                             <img src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/242518/check-icn.svg'
                                                 alt='Checked Icon'>
                                         </span>
@@ -352,7 +354,7 @@ data-id="<?php echo $question["QuestionID"];?>"
                     </button>
                 </div>
                 <div class="modal-body text-dark">
-<p class="card-description">Nhập thông tin bên dưới để sửa 1 Câu hỏi</p>
+                <p class="card-description">Nhập thông tin bên dưới để sửa 1 Câu hỏi</p>
                     <form class="mt-4" enctype="multipart/form-data" method="post">
                         <input  type="text" name="QuestionID" hidden="hidden">
                         <div class="form-group row">
@@ -395,7 +397,7 @@ data-id="<?php echo $question["QuestionID"];?>"
                                 </div>
                                 <input class="form-control option-custom" type='text'
                                     placeholder='Nhập Đáp Án' name='answer2'/>
-</div>
+                            </div>
                             <div class="col-sm-3">
                                 <div class="text-center position-relative">
                                     <input type="radio" class="form-check-input-custom color-3" id="custom3" name='answer'
@@ -439,7 +441,7 @@ data-id="<?php echo $question["QuestionID"];?>"
                                     <?php
                                         $cates = Category::list_category();
                                         foreach($cates as $item){
-echo "<option value = ".$item["ID"].">".$item["CategoryName"]."</option>";
+                                            echo "<option value = ".$item["ID"].">".$item["CategoryName"]."</option>";
                                         }
                                     ?>
                                 </select>
@@ -504,7 +506,7 @@ echo "<option value = ".$item["ID"].">".$item["CategoryName"]."</option>";
 
 <script>
     var editQuestionModal = $("#editQuestion");
-var QuestionId, question ,answer1 ,answer2, answer3, answer4, correctAnswer, categoryID ;
+    var QuestionId, question ,answer1 ,answer2, answer3, answer4, correctAnswer, categoryID ;
     var deleteQuestionModal = $("#deleteQuestion");
 
     editQuestionModal.on('show.bs.modal',function (event) {
@@ -548,10 +550,6 @@ var QuestionId, question ,answer1 ,answer2, answer3, answer4, correctAnswer, cat
 
 
 </script>
-
-
-
-
 
 </body>
 
