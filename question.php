@@ -28,7 +28,6 @@
 <body>
     <div id="container">
         <header>
-            <h1 id="category"></h1>
             <div class="hamburger">
                 <i class="fas fa-bars"></i>
             </div>
